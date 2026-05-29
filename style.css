@@ -1,0 +1,30 @@
+body {
+    background-color: #5a0000; /* Темно-красный фон */
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.logo { font-size: 150px; font-weight: bold; }
+h1 { margin-top: -20px; letter-spacing: 5px; }
+
+.progress-bg {
+    width: 400px;
+    height: 10px;
+    background: #330000;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #ff0000; /* Ярко-красный прогресс */
+    transition: width 0.3s ease;
+}
