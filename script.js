@@ -1,20 +1,17 @@
-function GameDetails(servername, serverurl, mapname, maxplayers, steamid, gamemode) {
-    document.getElementById('status').innerHTML = "Добро пожаловать на " + servername;
-}
-
-function SetFilesTotal(total) { /* Необязательно, если не нужен точный счетчик */ }
-
-function SetFilesNeeded(needed) { /* Необязательно */ }
-
 function DownloadingFile(fileName) {
-    document.getElementById('status').innerHTML = "Загрузка: " + fileName;
+    const status = document.getElementById('status');
+    const bar = document.getElementById('progress-bar');
+    
+    status.innerHTML = "Загрузка: " + fileName.split('/').pop();
+    
+    // Плавное увеличение бара (имитация логики)
+    let currentWidth = parseInt(bar.style.width) || 0;
+    if (currentWidth < 95) {
+        bar.style.width = (currentWidth + 2) + "%";
+    }
 }
 
-// Эмуляция прогресса (для теста в браузере)
-let width = 0;
-setInterval(() => {
-    if (width < 100) {
-        width += 1;
-        document.getElementById('progress-bar').style.width = width + "%";
-    }
-}, 100);
+// Уведомление об успешной загрузке
+window.onload = () => {
+    console.log("Загрузочный экран R-city RP инициализирован.");
+};
